@@ -1,5 +1,7 @@
 FROM microsoft/dotnet:1.1.1-sdk
 
+ENV PORT 80
+
 WORKDIR /app
 
 # copy csproj and restore as distinct layers
