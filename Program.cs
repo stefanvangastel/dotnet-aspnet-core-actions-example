@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 
+
 namespace dotnetapp
 {
     public class Program
@@ -14,7 +15,8 @@ namespace dotnetapp
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseUrls("http://0.0.0.0:5000")
+                .UseUrls("http://0.0.0.0:"+Environment.GetEnvironmentVariable("PORT")
+)
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
